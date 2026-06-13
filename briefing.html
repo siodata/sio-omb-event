@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#21605f">
+<title>The Symmetry Test · A briefing on OMB-2026-0034</title>
+<meta name="description" content="An independent briefing on the OMB Federal Financial Assistance Rule, OMB-2026-0034, with sourced scenarios, a note for counsel, and a floor statement for members of Congress.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep:#21605f; --teal:#5f9b8f; --foam:#bad2c5;
+    --sand:#f4edda; --sand2:#efe5cd; --card:#fbf6e9;
+    --ochre:#ce9134; --gold:#d9bd66; --clay:#b1452f;
+    --ink:#241a16; --soft:#5c5246; --line:#ddd0b2;
+    --fig-green:#2f7d54; --fig-blue:#2d6ca8; --fig-red:#8a2f22;
+    --maxw:680px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0; background:var(--sand); color:var(--ink);
+    font-family:"Hanken Grotesk",system-ui,sans-serif; font-size:clamp(17px,2.2vw,19px); line-height:1.72; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  h1,h2{font-family:"Bricolage Grotesque",system-ui,sans-serif; line-height:1.08; margin:0; letter-spacing:-.015em}
+  a{color:var(--deep); text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px}
+  a:hover{color:var(--clay)}
+  :focus-visible{outline:3px solid var(--ochre); outline-offset:2px; border-radius:3px}
+  .stripe{height:12px; border:0; background:repeating-linear-gradient(135deg,
+    var(--ochre) 0 18px, var(--gold) 18px 36px, var(--teal) 36px 54px, var(--clay) 54px 72px, var(--foam) 72px 90px)}
+  .mono{font-family:"Space Mono",ui-monospace,monospace}
+  .eyebrow{font-family:"Space Mono",ui-monospace,monospace; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--deep)}
+
+  /* TAB BAR (shared across the three docs) */
+  .tabs{position:sticky; top:0; z-index:20; background:var(--sand); border-bottom:1px solid var(--line)}
+  .tabs .inner{max-width:var(--maxw); margin:0 auto; display:flex; gap:6px; padding:8px 22px}
+  .tabs a{flex:1; text-align:center; font-family:"Space Mono",monospace; font-weight:700; font-size:12px;
+    letter-spacing:.03em; text-transform:uppercase; text-decoration:none; color:var(--deep);
+    padding:10px 6px; border-radius:999px; white-space:nowrap}
+  .tabs a:hover{background:var(--foam); color:var(--deep)}
+  .tabs a[aria-current="page"]{background:var(--deep); color:var(--sand)}
+
+  /* MASTHEAD */
+  header.top{padding:30px 0 6px}
+  .eyebrow.lead{display:block; color:var(--ochre); font-weight:700; margin-bottom:10px}
+  h1{font-size:clamp(34px,7vw,56px); font-weight:800; margin:6px 0 0}
+  .deck{font-family:"Hanken Grotesk",sans-serif; font-style:italic; font-weight:500;
+    font-size:clamp(17px,2.7vw,21px); color:var(--soft); max-width:30em; margin:16px 0 0; line-height:1.4}
+  .byline{font-family:"Space Mono",monospace; font-size:12.5px; color:var(--soft); margin:18px 0 0}
+  .standfirst{font-size:1.02em; margin:18px 0 0}
+  .rule{height:1px; background:var(--line); border:0; margin:26px 0 0}
+
+  main{padding:6px 0 0}
+  p{margin:18px 0}
+  h2{font-size:clamp(23px,4.2vw,29px); font-weight:700; color:var(--deep); margin:44px 0 0}
+  h2 .num{font-family:"Space Mono",monospace; font-weight:700; font-size:.62em; color:var(--clay); margin-right:.5em}
+  h2 + p{margin-top:14px}
+  .scen{font-weight:700}
+
+  /* FIGURE */
+  figure{margin:32px 0; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px 18px 16px}
+  figure svg{display:block; width:100%; height:auto}
+  .legend{display:flex; flex-wrap:wrap; gap:8px 18px; margin:12px 2px 0}
+  .legend span{display:inline-flex; align-items:center; gap:8px; font-family:"Space Mono",monospace; font-size:11.5px; color:var(--soft)}
+  .legend i{width:22px; height:0; border-top-width:3px; border-top-style:solid; display:inline-block; flex:0 0 auto}
+  .li-green{border-color:var(--fig-green); border-top-style:dashed !important}
+  .li-blue{border-color:var(--fig-blue)}
+  .li-redb{border-color:var(--fig-red); border-top-width:4px !important}
+  .li-redf{border-color:var(--fig-red); opacity:.45}
+  figcaption{font-style:italic; font-size:14px; color:var(--soft); line-height:1.5; margin:14px 2px 0}
+
+  /* LEGAL LIST */
+  ul.legal{list-style:none; padding:0; margin:18px 0 0}
+  ul.legal li{padding:14px 0; border-top:1px solid var(--line); font-size:.98em; line-height:1.6}
+  ul.legal li b{color:var(--deep)}
+
+  /* FLOOR STATEMENT */
+  .floor{margin:46px 0 0; background:var(--card); border:1px solid var(--line); border-left:5px solid var(--deep); border-radius:12px; padding:20px 22px}
+  .floor h2{margin:0; color:var(--deep)}
+  .floor .note{font-family:"Space Mono",monospace; font-style:normal; font-size:12px; color:var(--soft); margin:8px 0 0}
+  .floor p{margin:16px 0 0}
+
+  .sources{font-style:italic; font-size:14px; color:var(--soft); line-height:1.55; margin:30px 0 0}
+
+  /* FOOTER NAV */
+  footer{padding:26px 0 56px; color:var(--soft); font-size:14.5px}
+  .also{font-family:"Space Mono",monospace; font-size:11.5px; letter-spacing:.04em; text-transform:uppercase; color:var(--soft); margin:0 0 8px}
+  footer a{font-weight:600}
+
+  @media (max-width:420px){ .tabs a{font-size:11px; letter-spacing:0} }
+</style>
+</head>
+<body>
+<hr class="stripe" aria-hidden="true">
+<nav class="tabs" aria-label="The three documents">
+  <div class="inner">
+    <a href="index.html">The event</a>
+    <a href="briefing.html" aria-current="page">The briefing</a>
+    <a href="oped.html">The op-ed</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow lead">An independent briefing</span>
+    <h1>The Symmetry Test</h1>
+    <p class="deck">Why a science loyalty switch destroys science permanently, regardless of who holds it.</p>
+    <p class="standfirst">An independent briefing on OMB-2026-0034, with a floor statement for members of Congress.</p>
+    <p class="byline">Prepared by SC Diggs · June 12, 2026</p>
+    <hr class="rule" aria-hidden="true">
+  </header>
+
+  <main>
+    <p>There is a reason that no government serious about its own long-term strength has taken this step before. The reason is not obvious at first glance, which is precisely why it is worth setting out in full. This briefing builds the argument one piece at a time, so that the conclusion arrives as the reader's own rather than as an assertion from its author. Set your politics aside for the length of the argument. It does not need them, and that is the first clue to how poor the idea is.</p>
+
+    <p>The case sets aside, deliberately, the question of whether the current administration's priorities are sound. It rests instead on a single neutral question, which I will call the symmetry test: would you be willing to place this same power in the hands of the people you most oppose? Enacting the rule answers that question for you, because the power does not attach to a party. It attaches to an office, and offices change hands.</p>
+
+    <h2><span class="num">1</span>What the rule does</h2>
+    <p>Office of Management and Budget docket OMB-2026-0034, the Federal Financial Assistance Rule, restructures how federal grants are reviewed; the public comment period closes on July 13, 2026. The rule reduces expert peer review from a determination that agencies have routinely deferred to, to a function that is merely advisory. It then vests final authority in political appointees to approve, deny, or terminate awards, including active awards, based on alignment with presidential priorities. The rule reaches nearly all federal financial assistance, not research alone: housing, disaster recovery, transportation, libraries, and a great deal more.</p>
+
+    <h2><span class="num">2</span>The distinction that matters: a steering wheel is not a kill switch</h2>
+    <p>Democratic governments have always guided science, and properly so. Elected officials set national priorities and decide which fields to support. That authority is legitimate, it looks forward rather than backward, and the enterprise has always survived it. The Apollo program, the war on cancer, and the rise and fall of climate funding are all examples of legitimate steering.</p>
+    <p>The proposed rule does something different in kind. First, it removes scientific competence as the binding test for an award. Second, it attaches a termination switch to ideological alignment and applies that switch retroactively, to work already underway. Setting a destination is a steering wheel. Installing the means to stop the engine at will is a kill switch. The first guides the vehicle; the second ends the journey, and the ending cannot be reversed.</p>
+    <p>It is essential to see where the switch is installed. It is not granted to a team; it is bolted to an office. Because offices alternate, the party that enacts this rule does not acquire a permanent capability. It creates a capability that its successors inherit intact and, predictably, turn in the opposite direction. The prudent posture toward such a tool is the same one a serious legislature already takes toward abolishing the filibuster: one declines, not out of confidence that one will keep power, but because the step is irreversible and symmetric, and no responsible majority stakes the entire national research base on an unbroken run of election victories.</p>
+
+    <h2><span class="num">3</span>Why irreversibility, not probability, settles the question</h2>
+    <p>The case against the rule does not depend on a claim that collapse is likely. It depends on the fact that the damage cannot be undone. Destruction is immediate; reconstruction takes a generation. A multi-decade observational record interrupted for even a few years is not paused but lost, because the missing years cannot be measured after the fact and the calibration chain is broken. A departed cohort of early-career researchers does not return at the next election. International trust, once forfeited, is priced in permanently by partners who plan across decades.</p>
+    <p>That asymmetry is the substance of the figure below. The trajectory under a loyalty-gated regime is not free to set its own level; it is the merit-based path, less everything that destruction removes faster than rebuilding can replace. The vertical axis is an ordinal composite rather than a measured unit, so the figure should be read for the shape of the trajectories, not their levels.</p>
+
+    <figure>
+      <svg width="680" height="492" viewBox="0 0 680 492" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>Even in their best case: one party holds power through 2045 and capacity still declines</title>
+      <desc>Four trajectories. Green bold dashed: merit review holds, rising. Blue: rest of the world, rising, overtakes the U.S. early. Bold oxblood: one party holds power through 2045, declining smoothly. Faint oxblood: power changes hands instead, sawtoothing down. Both failure paths converge to the same 2045 endpoint.</desc>
+      <style>
+      .t{font:500 15px -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;fill:#2C2C2A}
+      .ts{font:400 13px -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;fill:#444441}
+      .th{font:600 17px -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;fill:#2C2C2A}
+      .leader{stroke:#A8A69E;stroke-width:.9;stroke-dasharray:3 3;fill:none}
+      .axis{stroke:#6F6E69;stroke-width:1.25;fill:none}
+      </style>
+      <defs>
+      <marker id="arrox" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#6F6E69" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+      </defs>
+      <rect x="0" y="0" width="680" height="492" fill="#FFFFFF"/>
+      <text class="th" x="40" y="30">Even in their best case</text>
+      <text class="ts" x="40" y="49">One party holds power from 2025 to 2045, and merit review is still replaced by loyalty</text>
+
+      <rect x="90" y="78" width="550" height="352" fill="#2C2C2A" opacity="0.03"/>
+      <line x1="200" y1="150" x2="200" y2="430" class="leader"/>
+      <line x1="310" y1="150" x2="310" y2="430" class="leader"/>
+      <line x1="420" y1="150" x2="420" y2="430" class="leader"/>
+      <line x1="530" y1="150" x2="530" y2="430" class="leader"/>
+
+      <line x1="90" y1="430" x2="90" y2="66" class="axis" marker-end="url(#arrox)"/>
+      <line x1="90" y1="430" x2="650" y2="430" class="axis" marker-end="url(#arrox)"/>
+
+      <text class="ts" x="90" y="447" text-anchor="middle">2025</text>
+      <text class="ts" x="200" y="447" text-anchor="middle">2029</text>
+      <text class="ts" x="310" y="447" text-anchor="middle">2033</text>
+      <text class="ts" x="420" y="447" text-anchor="middle">2037</text>
+      <text class="ts" x="530" y="447" text-anchor="middle">2041</text>
+      <text class="ts" x="640" y="447" text-anchor="middle">2045</text>
+
+      <polyline fill="none" stroke="#1FA055" stroke-width="3.5" stroke-dasharray="9 6" stroke-linecap="round" stroke-linejoin="round" points="90,214 200,192 310,167 420,142 530,113 640,84"/>
+      <polyline fill="none" stroke="#2F7FD6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="90,250 200,228 310,207 420,182 530,156 640,131"/>
+      <polyline fill="none" stroke="#7B1F1F" stroke-width="1.75" stroke-dasharray="2 4" stroke-linecap="round" stroke-linejoin="round" opacity="0.5" points="90,214 190,226 200,274 300,252 310,298 410,280 420,320 520,306 530,338 630,326 640,344"/>
+      <polyline fill="none" stroke="#7B1F1F" stroke-width="3.75" stroke-linecap="round" stroke-linejoin="round" points="90,214 145,223 200,236 255,250 310,264 365,279 420,293 475,306 530,318 585,331 640,344"/>
+
+      <circle cx="180" cy="232" r="5" fill="#FFFFFF" stroke="#2F7FD6" stroke-width="3"/>
+      <circle cx="640" cy="344" r="5" fill="#7B1F1F"/>
+
+      <line x1="300" y1="406" x2="420" y2="294" class="leader"/>
+      <text class="ts" x="120" y="414">merit replaced by loyalty; no way to check the work</text>
+      <line x1="560" y1="362" x2="632" y2="346" class="leader"/>
+      <text class="ts" x="466" y="358">same destination</text>
+
+      <line x1="100" y1="88" x2="128" y2="88" stroke="#1FA055" stroke-width="3.5" stroke-dasharray="9 6"/>
+      <text class="ts" x="134" y="92">if merit review holds (the steering wheel)</text>
+      <line x1="100" y1="107" x2="128" y2="107" stroke="#7B1F1F" stroke-width="3.75"/>
+      <text class="ts" x="134" y="111">one party holds power through 2045</text>
+      <line x1="100" y1="126" x2="128" y2="126" stroke="#7B1F1F" stroke-width="1.75" stroke-dasharray="2 4" opacity="0.6"/>
+      <text class="ts" x="134" y="130">if power changes hands instead (for comparison)</text>
+      <line x1="100" y1="145" x2="128" y2="145" stroke="#2F7FD6" stroke-width="3"/>
+      <text class="ts" x="134" y="149">rest of the world</text>
+
+      <text class="ts" x="365" y="476" text-anchor="middle">whether power flips or never does, the destination is the same</text>
+      </svg>
+      <figcaption>Figure 1. U.S. scientific capacity under a merit-based path (green), under a loyalty-gated regime in which one party holds power through 2045 (solid dark red), and under the same regime with periodic changes of control (faint dark red). The rest of the world is shown in blue and overtakes the United States early. Vertical axis: a unitless, ordinal index of scientific capacity (knowledge, trained people, working instruments, and international trust), not a measured quantity; read the shape, not the numbers. Trajectories are illustrative and not to scale.</figcaption>
+    </figure>
+
+    <p>The figure also answers a natural objection in advance. One might suppose that the harm comes from political whiplash, and that a stable, single-party regime would avoid it. It would not. Whether control changes every four years or never changes at all, the destination is the same, because the cause is the replacement of merit with loyalty. The single-party case is arguably worse over time, since no one remains who is positioned to correct the accumulating errors.</p>
+    <p>Because the severe outcomes are permanent, even a modest probability dominates the decision, in the same way that a person declines a low-odds wager whose loss cannot be recovered. The honest summary is therefore not a single number for the probability of collapse. It is this: the mild outcomes are the more likely ones and they are still costly; the severe outcomes are less likely but permanent; and no outcome returns to the starting point, because none of them is reversible.</p>
+
+    <h2><span class="num">4</span>A quiet victory</h2>
+    <p>Should the proposal become a final rule, its apparent victory will be quiet and Pyrrhic. To the general public, nothing will seem to change on the day it takes effect. Within the scientific community, the corrosion will begin immediately, and it will run deep.</p>
+    <p>The rule does not need to revoke many grants to change behavior. The knowledge that alignment will now be judged is enough. Researchers will trim their questions, soften their findings, and avoid entire topics, not because anyone instructed them to, but because they have seen what disfavor now costs. That is the most efficient form of control, because the subject enforces it on themselves.</p>
+    <p>It is worth being precise about what this is. It is not a purge, which would be a single housecleaning with a beginning and an end. It is something more durable: a standing loyalty condition. A researcher may hold the highest standing in their field, doing work no one disputes, and remain in good standing until that work brushes against the administration's goals, at which point the very record that earned respect becomes grounds for termination. Everyone becomes provisional, indefinitely, regardless of merit.</p>
+
+    <h2><span class="num">5</span>Four scenarios, each anchored to evidence</h2>
+    <p><span class="scen">Scenario 1, the performative phase,</span> is the most likely in the near term. The rule passes, the termination authority is used against a limited set of visible targets, and most research continues under a quiet chill of self-censorship and careful rewording of proposals. The damage is real but slow, and this is the phase most easily mistaken for safety. The first losses fall on the slowest-compounding layer, basic research, where the United States still leads China by roughly 0.5 percent of GDP to 0.19 percent (OECD figures, reported in Science, April 2026). That lead is the country's remaining edge, and it is the first thing the cuts reach.</p>
+    <p><span class="scen">Scenario 2, the first reversal,</span> begins when power changes hands and the switch is turned in the other direction. Institutions that have now watched ideological termination from both sides come to treat federal funding as politically unsafe on any horizon longer than a single term. The workforce is already prepared to move: a March 2025 Nature poll of about 1,600 researchers found that more than 75 percent were considering leaving the United States, including 80 percent of postdoctoral researchers; applications abroad rose about 30 percent year over year; and the European Union and France committed 500 million euros to recruit them.</p>
+    <p><span class="scen">Scenario 3, the compounding decline,</span> follows after two or three cycles, as the gap between destruction and rebuilding widens and the training system itself thins: the research universities, the graduate pipeline, and science education in the schools. The clearest historical parallel is Germany after 1933. Roughly one quarter of the country's physicists were dismissed, including eleven past or future Nobel laureates. The mathematics center at Göttingen, the strongest in the world and built over more than a century, was hollowed out in under a decade, and only one full professor from the pre-1933 faculty remained past 1934. Asked whether mathematics at Göttingen had suffered, David Hilbert replied that there was no mathematics in Göttingen anymore. Scientific leadership moved to the United Kingdom and the United States and did not return. The irony deserves emphasis: American scientific primacy was built in large part on another nation's identical, self-inflicted wound.</p>
+    <p><span class="scen">Scenario 4, decoupling,</span> is the least likely and the most severe. The rest of the developed world routes around the United States on data sharing, instrument continuity, and joint missions. The country retains its existing capability until it ages out, with no pipeline to replace it. The probability is low, but the outcome is permanent. The competitive clock is already advanced: China's gross spending on research and development reached roughly 1.03 trillion dollars in 2024, against approximately 1.01 trillion for the United States on a purchasing-power basis, the first such crossover on record, and China's spending grew by 9.7 percent that year against 3.4 percent for the United States (OECD, reported in Science, 2026).</p>
+
+    <h2><span class="num">6</span>The cobalt bomb in administrative clothing</h2>
+    <p>A historical analogy clarifies the logic. In 1950, the physicist Leó Szilárd described a hypothetical weapon: an ordinary nuclear device wrapped in a jacket of cobalt, which would scatter radioactive fallout so persistent that it could, in principle, end human life across the planet. Szilárd did not propose the cobalt bomb in order to build it. He described it as a thought experiment, specifically so that the public would understand that humanity had become capable of constructing a device that offers no victory: the fallout returns upon the side that used it, and it lingers long after any conflict has ended. No such weapon has ever been built, and that restraint is itself the lesson. Some capabilities are reasoned about only so that we understand why they must never be realized.</p>
+    <p>The proposed rule belongs to that category, in logic if not in scale. A regulation is not a weapon, and the comparison is one of structure, not magnitude. The structure, however, is the same: an instrument that resembles power, that secures no lasting victory, that cannot be aimed only at one's opponents, and whose damage persists well beyond the moment it is used. It is the kind of mechanism that a careful government examines in order to confirm that it should remain on the shelf.</p>
+
+    <h2><span class="num">7</span>The strongest objection, fairly stated</h2>
+    <p>The most serious objection deserves a direct answer. Administrations have always influenced science, the argument runs, and the enterprise has endured. That is true of steering, but not of a kill switch. Setting priorities looks forward and concerns topics; this rule looks backward and concerns conclusions. A related objection holds that career program officers already exercise discretion. The answer is that program officers are themselves scientists, choosing among proposals that have already cleared expert review on the merits, whereas the rule empowers political appointees who are not scientists to overturn those merit judgments and to terminate work in progress. That is a difference in kind rather than degree. Peer review is imperfect, and its most exacting critics are scientists themselves. The appropriate response is reform: greater transparency, rotation of review panels, relief on funding rates, and statutory protection through the Scientific Integrity Act (H.R. 1106). The appropriate response is not the transfer of merit judgment to political control.</p>
+
+    <h2><span class="num">8</span>A further consideration that should give any side pause</h2>
+    <p>There is a deeper hazard, and it holds even when the mandated conclusion is correct. Consider the strongest case, human-caused climate change, which is as well established as any finding in the earth sciences. I will be candid that I would prefer it were not so, and that any scientist would welcome a sound reason to revise it. It is nonetheless true, and the discipline of the method is that no one, however placed, is entitled to the answer they would prefer. The moment a government orders scientists to treat even a true result as beyond question, the result ceases to be knowledge and becomes a loyalty oath. A finding that may not be tested is held for the wrong reason, and the only instrument capable of dislodging a false finding later has been discarded. Merit review is valuable not because it is always correct, but because it is the only mechanism that can compel power to relinquish an answer it favors but that happens to be wrong.</p>
+
+    <h2><span class="num">9</span>A note for counsel</h2>
+    <p>We are not lawyers, and nothing here is a legal opinion. We flag the following because the proposal appears to raise serious constitutional questions that warrant prompt review by counsel, and because the groundwork below may save a reviewing attorney some initial effort. The central concern is that conditioning federal support on alignment with an administration's goals may operate as a loyalty condition on funded inquiry and speech. Several lines of doctrine bear on it:</p>
+    <ul class="legal">
+      <li><b>Keyishian v. Board of Regents (1967):</b> the Court struck down loyalty oaths for public university faculty and described academic freedom as a special concern of the First Amendment. Question: does gating funding on ideological alignment operate as a de facto loyalty oath?</li>
+      <li><b>Agency for International Development v. Alliance for Open Society International (2013):</b> the government may not condition funding on a recipient professing a government-favored belief. Question: does the rule compel affirmation of a viewpoint, or merely set permissible topic priorities?</li>
+      <li><b>Legal Services Corp. v. Velazquez (2001):</b> viewpoint-based restrictions within a federal funding scheme raised First Amendment concern. Question: is termination for misalignment a viewpoint-based condition?</li>
+      <li><b>Rust v. Sullivan (1991), the honest counterweight:</b> the government has broad latitude to define the activities it funds, and a defender will argue this rule is mere priority-setting. The analysis therefore turns on the final rule's exact operative text: whether it compels or penalizes a viewpoint, or only reprioritizes topics.</li>
+    </ul>
+    <p>Because this doctrine guards against any administration imposing any orthodoxy, the question is viewpoint-neutral on its face, which is consistent with the apolitical posture of this briefing. We recommend that counsel test the final rule text against these authorities.</p>
+
+    <h2><span class="num">10</span>Recommendation</h2>
+    <p>I respectfully recommend that OMB withdraw or fundamentally revise docket OMB-2026-0034. At a minimum, the final rule should preserve binding expert merit review as the determinant of every award and should exempt sustained observational programs from any termination authority not grounded in scientific merit. Beyond the rule itself, Congress should make independent merit review permanent in statute, so that no future administration of any party inherits the switch.</p>
+    <p>Notice what this argument has not asked of you. It has not asked you to share anyone's politics, to favor one party over another, or to distrust any administration in particular. A proposal that can be opposed on its structure alone, without reference to ideology, is not an ordinary policy dispute. It is a structural mistake, and structural mistakes do not care who makes them. That is the strongest reason to oppose this one, and to do so without reservation.</p>
+    <p>The reason that no government serious about its future has taken this step now stands clear. Followed to its end, the logic resolves into a single sentence: a government may secure the result it wants once, and then the capacity to produce any result at all is gone. That is not a side effect of the policy. <b>It is the policy.</b> The responsible course is to step back from it while stepping back still costs us nothing.</p>
+
+    <div class="floor">
+      <h2>Floor statement</h2>
+      <p class="note">Approximately three minutes, for the record.</p>
+      <p>Mr. Speaker, I rise about a rule that few Americans have heard of, Office of Management and Budget docket 2026-0034, and about a question that belongs to no party. The rule would allow political appointees to cancel federal research grants, including grants already underway, whenever the work does not match the priorities of the President. Its supporters believe they are taking the wheel. In fact, they are installing a switch that stops the engine.</p>
+      <p>I would ask every colleague to apply one test. This power does not belong to an administration. It belongs to the office, and the office changes hands. Whatever you would permit your own side to do with this switch, you are handing to the other side to do in return, on the day an election turns. If that prospect troubles you, then the rule should trouble you, and you already understand its danger.</p>
+      <p>We know where this road leads, because a great nation has walked it before. In 1933, another country required its science to pass a political test. It dismissed a quarter of its physicists, eleven of them Nobel laureates, and the finest mathematics faculty in the world was gone within a decade and never recovered. That talent crossed the ocean to us, and the United States became the leader of world science on the strength of another country's mistake. Today, with China having passed us in research spending for the first time in history, we are debating whether to repeat that mistake against ourselves.</p>
+      <p>Consider the deepest danger of all. Even when a required conclusion happens to be correct, ordering scientists to hold it destroys the very thing that allows us to know it is correct. A result that may not be questioned is not knowledge; it is an oath. Merit review is not sacred because it is always right. It is sacred because it is the only means we have of compelling power to give up an answer it likes but that happens to be false.</p>
+      <p>Notice that nothing I have said asked you to share my politics. You cannot tell them from this argument, and that is the point. Destruction is immediate; rebuilding takes a generation. The harm this rule would do is permanent, and it would be ours alone to bear, while the rest of the world continues to climb. I urge this body to oppose docket 2026-0034 and to make independent merit review permanent in law, not for one party or the other, but for the single advantage no serious nation surrenders on purpose. I yield back.</p>
+    </div>
+
+    <p class="sources">Sources: OECD Main Science and Technology Indicators (March 2026), reported in Science (April 2, 2026); Nature researcher poll (March 2025); PBS NewsHour and Association of American Universities compilations (2025); Atomic Heritage Foundation; Live Science and The Conversation on the Göttingen case. Legal authorities cited for counsel review only and not as legal advice. Figures are illustrative; data points are attributed. Comment deadline July 13, 2026, regulations.gov, docket OMB-2026-0034. Prepared by SC Diggs.</p>
+  </main>
+</div>
+
+<hr class="stripe" aria-hidden="true">
+<div class="wrap">
+  <footer>
+    <p class="also">Two other ways in</p>
+    <p>This is the rigorous version. There is also <a href="oped.html">the op-ed</a>, a shorter take for a general reader, and <a href="index.html">the writing party</a>, where the SIO community files comments together before July 13. File yours on <a href="https://www.regulations.gov/docket/OMB-2026-0034">regulations.gov</a>, docket OMB-2026-0034.</p>
+  </footer>
+</div>
+</body>
+</html>
