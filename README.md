@@ -2,7 +2,7 @@
 
 Public site for the Scripps Institution of Oceanography response to the OMB Federal Financial Assistance Rule (docket OMB-2026-0034). Comment deadline: **July 13, 2026.**
 
-Live at: https://sdiggs.github.io/sio-omb-event/
+Live at: https://siodata.github.io/sio-omb-event/
 
 ## What this is
 
@@ -28,7 +28,7 @@ There is no build step, no framework, and no dependencies to install. Each page 
 
 ## Hosting (GitHub Pages)
 
-See the step-by-step in the handoff notes. In short: put these four files in the root of the `sio-omb-event` repository on the `main` branch, enable GitHub Pages from `main` / `/ (root)`, and the site serves at https://sdiggs.github.io/sio-omb-event/. The tab links are relative, so the three-tab navigation works the same locally and on Pages.
+See the step-by-step in the handoff notes. In short: put these four files in the root of the `sio-omb-event` repository on the `main` branch, enable GitHub Pages from `main` / `/ (root)`, and the site serves at https://siodata.github.io/sio-omb-event/. The tab links are relative, so the three-tab navigation works the same locally and on Pages.
 
 ## Source
 
