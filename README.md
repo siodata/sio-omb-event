@@ -32,4 +32,4 @@ See the step-by-step in the handoff notes. In short: put these four files in the
 
 ## Source
 
-Draws on the SIO continuity and strategy document, "Scripps and the Moment." Prepared by S.C.D.
+Draws on the SIO Community's continuity and strategy document, "Scripps and the Moment." Prepared by S.C.D.
