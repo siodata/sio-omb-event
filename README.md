@@ -1,6 +1,6 @@
 # sio-omb-event
 
-Public site for the Scripps Institution of Oceanography response to the OMB Federal Financial Assistance Rule (docket OMB-2026-0034). Comment deadline: **July 13, 2026.**
+Public site for the SIO's community response to the OMB Federal Financial Assistance Rule (docket OMB-2026-0034). Comment deadline: **July 13, 2026.**
 
 Live at: https://siodata.github.io/sio-omb-event/
 
