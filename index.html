@@ -147,6 +147,17 @@
     .porthole{animation:none}
     .btn-primary:hover{transform:none}
   }
+
+  /* RSVP + QR (hero) */
+  .rsvp{display:flex; align-items:center; gap:18px; flex-wrap:wrap; justify-content:center;
+    background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 18px; margin:16px 0 0; text-align:left}
+  .rsvp .txt{flex:1 1 240px; min-width:200px}
+  .rsvp .txt .eyebrow{display:block; margin-bottom:6px}
+  .rsvp .txt p{margin:0 0 12px; font-size:15.5px; color:var(--soft); line-height:1.5}
+  .rsvp .qr{flex:0 0 auto; display:flex; flex-direction:column; align-items:center; gap:7px; text-decoration:none}
+  .rsvp .qr img{width:118px; height:118px; display:block; background:#fff; border:1px solid var(--line); border-radius:10px; padding:7px}
+  .rsvp .qr span{font-family:"Space Mono",monospace; font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:var(--deep)}
+  @media (max-width:520px){ .rsvp{flex-direction:column-reverse; text-align:center} .rsvp .txt{flex-basis:auto} }
 </style>
 </head>
 <body>
@@ -175,6 +186,18 @@
       </div>
       <a class="btn btn-primary" href="https://www.regulations.gov/docket/OMB-2026-0034">File on regulations.gov</a>
     </div>
+
+    <div class="rsvp">
+      <div class="txt">
+        <span class="eyebrow">RSVP</span>
+        <p>Coming to the writing party on Wednesday, June 17? Let us know, so we can set out enough seats, snacks, and beverages. Scan the code, or tap the button if you are already on your phone.</p>
+        <a class="btn btn-primary" href="https://forms.gle/x5oYZKD7WPA8yxWZA">RSVP for June 17</a>
+      </div>
+      <a class="qr" href="https://forms.gle/x5oYZKD7WPA8yxWZA" aria-label="RSVP for June 17">
+        <img src="data:image/png;base64,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" alt="QR code that opens the June 17 RSVP form">
+        <span>Scan to RSVP</span>
+      </a>
+    </div>
   </header>
 
   <section>
@@ -182,10 +205,10 @@
     <div class="event">
       <div class="top">
         <div class="when">Martin Johnson House</div>
-        <div class="meta">Scripps Institution of Oceanography · La Jolla · 12 to 2 p.m. · food provided</div>
+        <div class="meta">Scripps Institution of Oceanography · La Jolla · 12 to 2 p.m. · snacks and beverages provided</div>
       </div>
       <div class="body">
-        <p>Bring a laptop and one real example from your own work. We will walk through a template, brainstorm together, and draft substantive comments. Come file on the spot, or leave with a draft ready to submit. Graduate students and postdocs are especially welcome.</p>
+        <p>Bring your laptop. Before you arrive, think of one or two moments from your own work where this rule, if it took effect, would set your research back in a real and lasting way: a project that could be cancelled mid-stream, a record that would break if paused, a collaboration that would not survive the uncertainty. That concrete example is what makes a comment land. We will walk through a template, brainstorm together, and draft substantive comments, so you can file on the spot or leave with a draft ready to submit. SIO staff, graduate students, and postdocs are especially welcome.</p>
         <div class="btnrow">
           <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=Martin+Johnson+House+8840+Biological+Grade+La+Jolla+CA+92037">Get directions</a>
           <a class="btn btn-ghost" href="https://scripps.ucsd.edu/about/venues/martin-johnson-house">About the venue</a>
@@ -232,7 +255,7 @@
       <div class="row"><div class="sec">§200.205(d)</div><div class="eff">Peer review recommendations become advisory only.</div></div>
       <div class="row"><div class="sec">§200.205</div><div class="eff">An undefined "Gold Standard Science" test, tied to EO 14303, used to favor or disfavor institutions.</div></div>
       <div class="row"><div class="sec">§200.340</div><div class="eff">Active multi-year awards terminable any time for being "inconsistent with agency priorities."</div></div>
-      <div class="row"><div class="sec">§200.220</div><div class="eff">Broad bar on funds for international collaboration with covered foreign countries.</div></div>
+      <div class="row"><div class="sec">§200.220</div><div class="eff">Bars federally funded collaboration with covered foreign countries (China, Russia, Iran, Cuba) unless cleared in advance by the agency head or a designee.</div></div>
       <div class="row"><div class="sec">§200.432</div><div class="eff">Conference attendance allowable only if approved and written into the award at the outset.</div></div>
       <div class="row"><div class="sec">§200.461</div><div class="eff">Page charges, article processing charges, and open-access fees presumptively unallowable.</div></div>
       <div class="row"><div class="sec">§§200.421, 200.450</div><div class="eff">Public relations costs and "issue advocacy" barred, which can limit speaking publicly about your own findings.</div></div>
@@ -248,7 +271,7 @@
   </section>
 
   <section>
-    <h2><span class="lead">A second lever</span>Call Congress</h2>
+    <h2><span class="lead">A second lever</span>Contact Congress</h2>
     <p>Writing your comment is the first lever, and it matters. Here is a second one, separate and just as important. Your comment asks OMB to reconsider its own rule. Congress can stop the rule outright by adding blocking language to the spending bills that fund the government, whatever OMB decides to do with the comments. Two doors. Please push both.</p>
     <p><b>What to ask for.</b> Contact your U.S. Representative and both of your U.S. Senators, and ask them to add blocking language to the appropriations bills so this rule cannot take effect, and to tell OMB directly that the changes to the federal grant rules (2 C.F.R. Part 200, docket OMB-2026-0034) are unacceptable.</p>
     <div class="script">
@@ -269,7 +292,7 @@
     <h3>The rule, and how to file</h3>
     <ul>
       <li><a href="https://www.federalregister.gov/public-inspection/2026-10817/regulation-for-federal-financial-assistance">The proposed rule in the Federal Register</a><span class="src">Docket OMB-2026-0034</span></li>
-      <li><a href="https://www.regulations.gov/docket/OMB-2026-0034">File your comment on regulations.gov</a><span class="src">Docket OMB-2026-0034 · closes by July 13</span></li>
+      <li><a href="https://www.regulations.gov/docket/OMB-2026-0034" style="font-weight:700; color:var(--clay)">File your comment on regulations.gov</a><span class="src">Docket OMB-2026-0034 · closes by July 13</span></li>
     </ul>
 
     <h3>Summaries and guidance</h3>
