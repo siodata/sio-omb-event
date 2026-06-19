@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#21605f">
+<title>Examples and templates · Writing a comment that lands</title>
+<meta name="description" content="What the SIO community has learned about writing a public comment on the OMB Federal Financial Assistance Rule, docket OMB-2026-0034, plus templates and worked examples.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep:#21605f; --teal:#5f9b8f; --foam:#bad2c5;
+    --sand:#f4edda; --sand2:#efe5cd; --card:#fbf6e9;
+    --ochre:#ce9134; --gold:#d9bd66; --clay:#b1452f;
+    --ink:#241a16; --soft:#5c5246; --line:#ddd0b2;
+    --maxw:680px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0; background:var(--sand); color:var(--ink);
+    font-family:"Hanken Grotesk",system-ui,sans-serif; font-size:clamp(17px,2.2vw,19px); line-height:1.72; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(22px,6vw,34px)}
+  h1,h2{font-family:"Bricolage Grotesque",system-ui,sans-serif; line-height:1.08; margin:0; letter-spacing:-.015em}
+  a{color:var(--deep); text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px}
+  a:hover{color:var(--clay)}
+  :focus-visible{outline:3px solid var(--ochre); outline-offset:2px; border-radius:3px}
+  .stripe{height:12px; border:0; background:repeating-linear-gradient(135deg,
+    var(--ochre) 0 18px, var(--gold) 18px 36px, var(--teal) 36px 54px, var(--clay) 54px 72px, var(--foam) 72px 90px)}
+  .mono{font-family:"Space Mono",ui-monospace,monospace}
+  .eyebrow{font-family:"Space Mono",ui-monospace,monospace; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--deep)}
+
+  /* TAB BAR (shared across the docs) */
+  .tabs{position:sticky; top:0; z-index:20; background:var(--sand); border-bottom:1px solid var(--line)}
+  .tabs .inner{max-width:var(--maxw); margin:0 auto; display:flex; gap:5px; padding:8px clamp(22px,6vw,34px)}
+  .tabs a{flex:1; text-align:center; font-family:"Space Mono",monospace; font-weight:700; font-size:12px;
+    letter-spacing:.02em; text-transform:uppercase; text-decoration:none; color:var(--deep);
+    padding:10px 4px; border-radius:999px; white-space:nowrap}
+  .tabs a:hover{background:var(--foam); color:var(--deep)}
+  .tabs a[aria-current="page"]{background:var(--deep); color:var(--sand)}
+  .tabs a.ex{color:var(--clay)}
+  .tabs a.ex:hover{background:#eed6d0; color:var(--clay)}
+  .tabs a.ex[aria-current="page"]{background:var(--clay); color:var(--sand)}
+  @media (max-width:520px){ .tabs a{font-size:10.5px; letter-spacing:0; padding:9px 2px} .tabs .inner{gap:3px} }
+
+  header.top{padding:30px 0 6px}
+  .eyebrow.lead{display:block; color:var(--ochre); font-weight:700; margin-bottom:10px}
+  h1{font-size:clamp(31px,6.2vw,50px); font-weight:800; margin:6px 0 0}
+  .deck{font-family:"Hanken Grotesk",sans-serif; font-style:italic; font-weight:500;
+    font-size:clamp(17px,2.7vw,21px); color:var(--soft); max-width:32em; margin:16px 0 0; line-height:1.4}
+  .rule{height:1px; background:var(--line); border:0; margin:26px 0 0}
+
+  main{padding:6px 0 0}
+  p{margin:18px 0}
+  h2{font-size:clamp(23px,4.2vw,29px); font-weight:700; color:var(--deep); margin:42px 0 0}
+  h2 .lead{display:block; font-family:"Space Mono",monospace; font-weight:700; font-size:12px;
+    letter-spacing:.12em; text-transform:uppercase; color:var(--ochre); margin-bottom:8px}
+  h2 + p{margin-top:14px}
+
+  ol.steps{counter-reset:s; list-style:none; padding:0; margin:22px 0 0}
+  ol.steps li{position:relative; padding:0 0 16px 50px; line-height:1.6}
+  ol.steps li b{color:var(--deep)}
+  ol.steps li::before{counter-increment:s; content:counter(s); position:absolute; left:0; top:1px;
+    width:32px; height:32px; border-radius:50%; background:var(--deep); color:var(--gold);
+    font-family:"Space Mono",monospace; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center}
+  code{font-family:"Space Mono",monospace; font-size:.9em; background:var(--sand2); padding:1px 5px; border-radius:5px}
+
+  .stub{background:var(--card); border:1px dashed var(--line); border-radius:12px; padding:16px 18px; color:var(--soft); margin:18px 0 0}
+  .btnrow{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+  .btn{display:inline-block; font-family:"Space Mono",monospace; font-weight:700; font-size:13px; letter-spacing:.04em;
+    text-transform:uppercase; text-decoration:none; padding:12px 17px; border-radius:999px}
+  .btn-primary{background:var(--ochre); color:#241a16; box-shadow:0 4px 0 #b07a26}
+  .btn-primary:hover{background:#dca44a; color:#241a16}
+  .btn-ghost{background:transparent; color:var(--deep); box-shadow:inset 0 0 0 1.5px var(--deep)}
+  .btn-ghost:hover{background:var(--deep); color:var(--sand)}
+
+  .feature{background:var(--card); border:1px solid var(--line); border-left:4px solid var(--gold);
+    border-radius:12px; padding:18px 20px; margin:18px 0 0}
+  .feature .ftag{font-family:"Space Mono",monospace; font-weight:700; font-size:12px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--ochre)}
+  .feature .ftag .star{color:var(--gold); font-size:15px}
+  .feature h3{font-family:"Bricolage Grotesque",sans-serif; font-weight:700; font-size:20px; color:var(--ink);
+    margin:6px 0 0; line-height:1.18}
+  .feature .fby{font-family:"Space Mono",monospace; font-size:12.5px; color:var(--soft); margin:5px 0 0; line-height:1.5}
+  .feature p{margin:12px 0 0}
+
+  ul.res{list-style:none; padding:0; margin:18px 0 0}
+  ul.res li{padding:13px 0; border-top:1px solid var(--line)}
+  ul.res a{font-weight:600}
+  ul.res .src{display:block; font-family:"Space Mono",monospace; font-size:13px; color:var(--soft); margin-top:3px}
+
+  footer{padding:26px 0 56px; color:var(--soft); font-size:14.5px}
+  .also{font-family:"Space Mono",monospace; font-size:11.5px; letter-spacing:.04em; text-transform:uppercase; color:var(--soft); margin:0 0 8px}
+  footer a{font-weight:600}
+
+  @media (prefers-reduced-motion:reduce){ .btn-primary:hover{transform:none} }
+</style>
+</head>
+<body>
+<hr class="stripe" aria-hidden="true">
+<nav class="tabs" aria-label="The four documents">
+  <div class="inner">
+    <a href="index.html">Hub</a>
+    <a class="ex" href="examples.html" aria-current="page">Examples</a>
+    <a href="briefing.html">The briefing</a>
+    <a href="oped.html">The op-ed</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow lead">Comments that count</span>
+    <h1>Writing a comment that lands</h1>
+    <p class="deck">What the SIO community has learned about filing a public comment on the OMB rule, plus templates and worked examples. We will keep adding to this page as more come in.</p>
+    <hr class="rule" aria-hidden="true">
+  </header>
+
+  <main>
+    <h2><span class="lead">What we have learned</span>Six things that make a comment count</h2>
+    <p>Comments are weighed on substance, not on how many identical copies arrive, and anyone touched by federal research funding can file one: staff, students, postdocs, technicians, and faculty alike. A short, specific, first-person comment about real harm carries more weight than a polished form letter, and you can submit more than one, each on a different concern. The points below are drawn from the rulemaking notice and from guidance by AAAS, AGU, and Stand Up for Science.</p>
+    <ol class="steps">
+      <li><b>Tag the section.</b> Begin your comment with the relevant section in brackets, like <code>[200.205]</code>, as the Federal Register asks, then name the specific clause you are addressing.</li>
+      <li><b>Make it concrete.</b> Describe one real situation from your own work that the rule would damage: a grant that could be cancelled mid-stream, a long record that would break if paused, a collaboration that would not survive the uncertainty. Quantify the harm where you can.</li>
+      <li><b>Propose a fix.</b> Say what you want instead, for example that binding expert merit review be preserved, or that sustained observations be exempt from termination. A constructive alternative is harder to set aside.</li>
+      <li><b>Keep it yours.</b> Write in your own words and skip form letters, since identical comments are counted once. Speak for yourself, not for your institution, and describe your role and your work generically rather than naming where you study or work.</li>
+      <li><b>Pick your battles.</b> You do not need to address every provision in one comment. Focus on what affects you most directly, and feel free to file several comments, each on a different section.</li>
+      <li><b>Mind the tone.</b> Be critical but not antagonistic, and constructive where you can. You are helping build the record.</li>
+    </ol>
+    <p><b>Where to aim.</b> Three areas carry the most weight across the SIO community: the expansion of political authority over funding and the demotion of expert merit review; the power to end active grants mid-stream, and what that does to the staff, students, technicians, and early-career researchers whose jobs and training depend on them; and new limits on working with international colleagues. Whatever your role, if the rule would disrupt your work, your paycheck, your training, or your collaborations, that is worth saying.</p>
+    <p>When you are ready, file at <a href="https://www.regulations.gov/docket/OMB-2026-0034" style="font-weight:700; color:var(--clay)">regulations.gov</a>, docket OMB-2026-0034, by July 13.</p>
+
+    <h2><span class="lead">From the community</span>Templates and worked examples</h2>
+    <p>Real comments from real people make the best templates. Here is one we are holding up, with more to come as the community shares them.</p>
+
+    <div class="feature">
+      <div class="ftag"><span class="star">&#9733;</span> Shining example</div>
+      <h3>Comment #6: unilateral grant cancellation is destabilizing and unethical</h3>
+      <p class="fby">Logan Spector, Professor, University of Minnesota-Twin Cities, Pediatric Cancer Genetics and Epidemiology</p>
+      <p>A clear model of the six points above. It tags the section it addresses, <code>[200.340]</code>, grounds the harm in more than twenty years of federally funded childhood cancer research, shows how cancelling grants mid-stream collides with research ethics under 45 CFR 46.109, and closes with a specific recommendation to strike the change. He filed under his own name but kept the language generic, so it reads as his view and not his university's.</p>
+      <div class="btnrow"><a class="btn btn-ghost" href="https://docs.google.com/document/d/1doZ8uYhWmQL6jtRHtj7rFQ7p4c5x6vlX5q1SyBMOx2U/edit?usp=sharing">Read the full comment</a></div>
+    </div>
+
+    <div class="stub">This section will grow as the community shares worked comments and templates. Have one to share, or want to see what others wrote? Use the shared Drive.</div>
+    <div class="btnrow"><a class="btn btn-primary" href="https://drive.google.com/drive/folders/1RKTKZcbQr-3geO2sSPohtOaD9-jiaD4C?usp=sharing">Open the shared Drive</a></div>
+
+    <p class="also" style="margin-top:32px">Guidance on writing and filing</p>
+    <ul class="res">
+      <li><a href="https://www.aaas.org/resources/why-omb-proposed-rule-matters-aaas-members-and-what-you-can-do">Why the OMB rule matters and what you can do</a><span class="src">AAAS</span></li>
+      <li><a href="https://events.standupforscience.net/stand-up-for-science/writing-omb-public-comments">Writing OMB public comments</a><span class="src">Stand Up for Science</span></li>
+      <li><a href="https://www.agu.org/-/media/files/share-and-advocate-for-science/scipol-toolkits/toolkit---submitting-a-public-comment.pdf">Submitting a public comment (toolkit PDF)</a><span class="src">AGU</span></li>
+      <li><a href="https://youtu.be/3XgM_kNlpgM">Submitting a public comment (video)</a><span class="src">AGU</span></li>
+    </ul>
+  </main>
+</div>
+
+<hr class="stripe" aria-hidden="true">
+<div class="wrap">
+  <footer>
+    <p class="also">More on this site</p>
+    <p>Start at the <a href="index.html">hub</a>, read the full case in <a href="briefing.html">the briefing</a>, or share <a href="oped.html">the op-ed</a>. File your comment by July 13 on regulations.gov, docket OMB-2026-0034.</p>
+  </footer>
+</div>
+</body>
+</html>
